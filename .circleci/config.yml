@@ -15,16 +15,9 @@ jobs:
 
 workflows:
   version: 2
-  dog_workflow:
-    jobs:
-      - dog
   cat_workflow:
     triggers:
       - schedule:
-          cron: "*/5 * * * *"
-          filters:
-            branches:
-              only:
-                - master
+          cron: "30 9 * * *"
     jobs:
       - cat
