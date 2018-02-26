@@ -21,7 +21,7 @@ workflows:
   cat_workflow:
     triggers:
       - schedule:
-          cron: "30 9 * * *"
+          cron: "*/5 * * * *"
           filters:
             branches:
               only:
