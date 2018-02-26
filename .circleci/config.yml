@@ -1,16 +1,13 @@
 version: 2
 jobs:
-  hoge:
-    working_directory: ~/workspace
+  build:
     docker:
-      - image: node:9.4.0
+      - image: debian:stretch
     steps:
       - checkout
       - run:
-          name: Echo
-          command: echo hello, world.
-workflows:
-  version: 2
-  fuga:
-    jobs:
-      - hoge
+          name: Greeting
+          command: echo Hello, world.
+      - run:
+          name: Print the Current Time
+          command: date
