@@ -1,30 +1,16 @@
 version: 2
 jobs:
-  dog:
+  hoge:
+    working_directory: ~/workspace
     docker:
-      - image: node:8
+      - image: node:9.4.0
     steps:
       - checkout
-      - run: npm run dog
-  cat:
-    docker:
-      - image: node:8
-    steps:
-      - checkout
-      - run: npm run cat
-
+      - run:
+          name: Echo
+          command: echo hello, world.
 workflows:
   version: 2
-  dog_workflow:
+  fuga:
     jobs:
-      - dog
-  cat_workflow:
-    triggers:
-      - schedule:
-          cron: "*/5 * * * *"
-          filters:
-            branches:
-              only:
-                - master
-    jobs:
-      - cat
+      - hoge
