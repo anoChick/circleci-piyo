@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  dog:
+    docker:
+      - image: node:8
+    steps:
+      - checkout
+      - run: npm run dog
+  cat:
+    docker:
+      - image: node:8
+    steps:
+      - checkout
+      - run: npm run cat
+
+workflows:
+  version: 2
+  dog_workflow:
+    jobs:
+      - dog
+  cat_workflow:
+    triggers:
+      - schedule:
+          cron: "*/5 * * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - cat

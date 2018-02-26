@@ -1,0 +1,21 @@
+{
+  "name": "circleci-piyo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dog": "echo \"bow wow!\"",
+    "cat": "echo \"meow\"",
+    "piyo": "echo \"cheep cheep!\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anoChick/circleci-piyo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anoChick/circleci-piyo/issues"
+  },
+  "homepage": "https://github.com/anoChick/circleci-piyo#readme"
+}
